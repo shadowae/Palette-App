@@ -1,5 +1,5 @@
 import Canvas from './Canvas';
-import generateCodes from '../generateCodes'
+import generateCodes from '../utils/generateCodes'
 
 const paletteHeightCount = 1024;
 const paletteWidthCount = 32;
