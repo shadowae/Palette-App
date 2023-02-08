@@ -1,8 +1,8 @@
 import Canvas from './Canvas';
 import generateCodes from '../generateCodes'
 
-const paletteHeightCount = 40;
-const paletteWidthCount = 25;
+const paletteHeightCount = 820;
+const paletteWidthCount = 40;
 
 export default (props: { x: number, y: number }) => {
   const { x, y } = props
@@ -11,7 +11,7 @@ export default (props: { x: number, y: number }) => {
 
   const getExamples = (() => {
     for (let i = 0; i < paletteHeightCount; ++i) {
-      example.push(codes.slice(i * 25, (i + 1) * 25))
+      example.push(codes.slice(i * paletteWidthCount, (i + 1) * paletteWidthCount))
     }
   })()
 
