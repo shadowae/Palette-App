@@ -1,24 +1,23 @@
 export default () => {
-  console.log('asdds')
+  /*
+  We have 3 components to each colour set. So we run the recursion 3 level deep.
+  */
   const colours = [...getColours(3)];
-  console.log(colours);
   return colours;
 }
 
-
-/*
-We have 2 layers to each colour set
-*/
+const stepCount = 32;
 
 const colourRange = (() => {
   const array1 = [];
 
-  for (let i = 1; i <= 32; ++i) {
+  for (let i = 1; i <= stepCount; ++i) {
     array1.push(i * 8)
   }
 
   return array1;
 })();
+
 const getColours = (number: number, set: any = new Set(colourRange)) => {
   if (number == 1) {
     return set;
@@ -26,9 +25,7 @@ const getColours = (number: number, set: any = new Set(colourRange)) => {
   else {
     const updatedSet = new Set();
     for (let existingColour of set) {
-      // console.log(existingColour)
       for (let colour of colourRange) {
-        // console.log(colour)
         updatedSet.add(existingColour + ', ' + colour);
       }
     }

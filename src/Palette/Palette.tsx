@@ -1,13 +1,12 @@
 import Canvas from './Canvas';
 import generateCodes from '../generateCodes'
 
-const paletteHeightCount = 820;
-const paletteWidthCount = 40;
+const paletteHeightCount = 1024;
+const paletteWidthCount = 32;
 
-export default (props: { x: number, y: number }) => {
-  const { x, y } = props
+export default () => {
   const codes = generateCodes();
-  const example: [number] | [] = [];
+  const example: [[number]] | [] = [];
 
   const getExamples = (() => {
     for (let i = 0; i < paletteHeightCount; ++i) {
