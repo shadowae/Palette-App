@@ -6,18 +6,18 @@ const paletteWidthCount = 32;
 
 export default () => {
   const codes = generateCodes();
-  const example: [[number]] | [] = [];
+  const colourCodeArray: [[number]] | [] = [];
 
-  const getExamples = (() => {
+  const getColourCodeArray = (() => {
     for (let i = 0; i < paletteHeightCount; ++i) {
-      example.push(codes.slice(i * paletteWidthCount, (i + 1) * paletteWidthCount))
+      colourCodeArray.push(codes.slice(i * paletteWidthCount, (i + 1) * paletteWidthCount))
     }
   })()
 
   const draw = (context: any) => {
     for (let i = 0; i < paletteHeightCount; ++i) {
       let newX = 0;
-      for (let col of example[i]) {
+      for (let col of colourCodeArray[i]) {
         context.fillStyle = `rgb(${col})`;
         context.fillRect(newX, 25 * i, 25, 25);
         newX += 25;
